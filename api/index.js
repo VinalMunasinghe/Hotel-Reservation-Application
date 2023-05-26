@@ -13,6 +13,10 @@ console.log("Connected to MongoDB!");
 }
 };
 
+mongoose.connection.on("disconnected", () => {
+    console.log("mongoDB disconnected!");
+  });
+
 app.listen(8800, () => {
     connect() 
     console .log("Backend server is running!")
