@@ -5,9 +5,8 @@ const router = express.Router();
 
 //CREATE
 router.post("/", async (req, res) => {
-
+      
     const newHotel = new Hotel(req.body);
-
 
     try {
         const savedHotel = await newHotel.save();
@@ -15,11 +14,27 @@ router.post("/", async (req, res) => {
     } catch (error) {
         res.status(500).json(err)
     }
-    
+
 });
+
 //DELETE
 //GET
 //GET ALL
 
 
 export default router;
+
+
+// router.post("/", async (req, res) => {
+
+//     const newHotel = new Hotel(req.body);
+
+
+//     try {
+//         const savedHotel = await newHotel.save();
+//         res.status(200).json(savedHotel);
+//     } catch (error) {
+//         res.status(500).json(err)
+//     }
+    
+// });
