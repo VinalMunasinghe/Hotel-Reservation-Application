@@ -53,6 +53,9 @@ router.get("/:id", async (req, res) => {
 
 //GET ALL
 router.get("/", async (req, res) => {
+
+    console.log("Hi I am a hotel route")
+    next()
     try {
        const hotels = await Hotel.find();
        res.status(200).json(hotels);

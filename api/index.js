@@ -32,7 +32,9 @@ app.use("/api/users", userRoute);
 app.use("/api/hotels", hotelRoute);
 app.use("/api/rooms", roomRoute);
 
-
+app.use((req, res, next) => {
+    console.log("Hi I am a middleware");
+})
 
 
 app.listen(8800, () => {
