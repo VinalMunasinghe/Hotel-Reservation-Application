@@ -52,15 +52,12 @@ router.get("/:id", async (req, res) => {
 });
 
 //GET ALL
-router.get("/", async (req, res) => {
-
-    console.log("Hi I am a hotel route")
-    next()
+router.get("/", async (req, res,next) => {
     try {
-       const hotels = await Hotel.find();
+       const hotels = await Hotel.findById("efsghfdhjcgj");
        res.status(200).json(hotels);
    } catch (error) {
-       res.status(500).json(err)
+       next(error)
    }
 
 });
