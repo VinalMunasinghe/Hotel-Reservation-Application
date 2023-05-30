@@ -6,5 +6,6 @@ export const createHotel = async (req, res) => {
         res.status(200).json(savedHotel);
     } catch (error) {
         res.status(500).json(err)
+        next (err)
     }
 }
