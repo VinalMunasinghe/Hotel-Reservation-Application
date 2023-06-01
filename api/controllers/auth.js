@@ -33,7 +33,7 @@ export const login = async (req, res, next) => {
              )
         if(!isPasswordCorrect) 
         return next (createError (400, "Password is not correct"))
-       //console.log (isPasswordCorrect)
+       console.log (isPasswordCorrect)
         res.status(200).json(user)
     }catch(err){
         next(err)
